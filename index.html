@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Loading</title>
+</head>
+<body onload="mostrarPagina()" style="margin:0; text-align: center;">
+    <div id="carregador"></div>
+    <p id="pCorrida" >Preparando corrida</p>
+
+    <div id="corpoPagina" class="animate-bottom">
+        <button onclick="playVideo()">Iniciar Corrida</button>
+        <iframe id="video" width="560" height="315" 
+            src="https://www.youtube.com/embed/xHlkYkZ-6Wk" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    
+    <script>
+        var tempoPagina;
+        function mostrarPagina() {
+            tempoPagina = setTimeout(showPage, 1000); // aumentei o tempo para ilustração
+        }
+
+        var vid = document.getElementById("video");
+        function playVideo(){
+            vid.play();
+        }  
+
+        //document.getElementById("video").addEventListener("loadstart");
+        /*function startVideo() {
+            alert("Starting to load video");
+        }*/ 
+
+        function showPage() {
+        document.getElementById("carregador").style.display = "none";
+        document.getElementById("pCorrida").style.display = "none";
+        document.getElementById("corpoPagina").style.display = "block";
+        }
+    </script>
+</body>
+</html>
